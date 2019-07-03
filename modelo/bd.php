@@ -17,7 +17,7 @@ class BD {
         }
     }
 
-    function fetch($sql, $params = []) { // RECUPERAR. Si tiene parámetros se pasan (array) si no le paso nada, será un array vacío.
+    function fetch($sql, $params = []) { 
         try {
             $st = $this->conn->prepare($sql);
             $st->execute($params);
@@ -27,7 +27,7 @@ class BD {
         }
     }
 
-    function execute($sql, $params = []) { // INSERTAR, BORRAR, ACTUALIZAR
+    function execute($sql, $params = []) { 
         try {
             $st = $this->conn->prepare($sql);
             $st->execute($params);
