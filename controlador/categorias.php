@@ -52,7 +52,7 @@ class categorias {
      function buscar() {
         $nombre = filter_input(INPUT_POST, "nombre");
          if (!empty($nombre)) {
-            $categorias=$this->cat->search(['nombre' => $nombre]); // Esto se pasa a $filtro en la funcion "search".
+            $categorias=$this->cat->search(['nombre' => $nombre]); 
            
         } else {
             $categorias = $this->cat->getAll();;
