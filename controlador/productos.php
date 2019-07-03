@@ -62,7 +62,7 @@ class productos{
     function buscar() {
         $nombre = filter_input(INPUT_POST, "nombre");
          if (!empty($nombre)) {
-            $productos=$this->pro->search(['nombre' => $nombre]); // Esto se pasa a $filtro en la funcion "search".
+            $productos=$this->pro->search(['nombre' => $nombre]); 
            
         } else {
             $productos = $this->pro->getAll();;
