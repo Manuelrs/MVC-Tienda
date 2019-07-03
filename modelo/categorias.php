@@ -16,12 +16,12 @@ class mCategorias extends BD {
 
     function getById($id) {
         $sql = "select * from categorias where idcategoria=:id";
-        $cats = $this->fetch($sql, ['id' => $id]); // lo pasa a "$param=[]"
+        $cats = $this->fetch($sql, ['id' => $id]); 
         return $cats[0];
     }
 
     function search($filtro) {
-        $sql = "select * from categorias where 1=1 "; // Si es "true", recibiendo numero, $clave=$valor. SINO $clave like %$valor%.
+        $sql = "select * from categorias where 1=1 "; 
         foreach ($filtro as $clave => $valor) {
             if (is_numeric($valor)){
 		 $sql .= " and $clave = $valor ";
