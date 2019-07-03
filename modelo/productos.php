@@ -11,12 +11,12 @@ class mProductos extends BD{
     
     function getById($id) {
         $sql = "select * from productos where idproducto=:id";
-        $prods = $this->fetch($sql, ['id' => $id]); // lo pasa a "$param=[]"
+        $prods = $this->fetch($sql, ['id' => $id]); 
         return $prods[0];
     }
     
     function search($filtro) {
-        $sql = "select * from productos where 1=1 "; // Si es "true", recibiendo numero, $clave=$valor. SINO $clave like %$valor%.
+        $sql = "select * from productos where 1=1 "; 
         foreach ($filtro as $clave => $valor) {
             if (is_numeric($valor)){
 		 $sql .= " and $clave = $valor ";
